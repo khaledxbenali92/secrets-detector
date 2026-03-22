@@ -1,5 +1,4 @@
 name: 🔐 Secrets Detector CI
-
 on:
   push:
     branches: [ main ]
