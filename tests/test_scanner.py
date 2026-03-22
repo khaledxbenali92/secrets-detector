@@ -3,8 +3,8 @@
 """
 
 import pytest
-from secrets_detector.scanner import SecretsScanner
-from secrets_detector.rules import get_all_rules, get_rules_by_severity
+from src.scanner import SecretsScanner
+from src.rules import get_all_rules, get_rules_by_severity
 
 
 # ── Rules Tests ────────────────────────────────────────────────────────────────
