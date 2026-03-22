@@ -6,7 +6,7 @@ import re
 import os
 from pathlib import Path
 from datetime import datetime
-from .rules import get_all_rules, get_rules_by_severity
+from src.rules import get_all_rules, get_rules_by_severity
 
 
 # File extensions to scan
