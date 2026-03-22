@@ -147,10 +147,11 @@ class SecretsScanner:
     def _is_placeholder(self, text: str) -> bool:
         """Check if the match looks like a placeholder, not a real secret."""
         placeholders = [
-            "your-", "your_", "xxx", "example", "placeholder",
-            "changeme", "replace", "insert", "todo", "fixme",
-            "xxxxxxxx", "00000000", "test", "dummy", "fake",
-            "sample", "demo", "<", ">", "${", "%(", "env."
+            "your-", "your_", "xxx", "placeholder",
+            "changeme", "replace_me", "insert_here", "todo", "fixme",
+            "xxxxxxxx", "00000000", "dummy", "fake",
+            "sample_key", "demo_key", "<your", ">${", "%(", "env.",
+            "example_key", "example_secret", "example_token",
         ]
         text_lower = text.lower()
         return any(p in text_lower for p in placeholders)
