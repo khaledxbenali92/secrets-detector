@@ -56,7 +56,7 @@ RULES = [
         "name": "Stripe Restricted Key",
         "category": "Payment",
         "severity": "critical",
-        "pattern": r"rk_live_[0-9a-zA-Z]{24,}",
+        "pattern": r"sk_(?:live|test)_[0-9a-zA-Z]{24,}",
         "description": "Stripe Live Restricted Key",
         "remediation": "Rotate immediately at Stripe Dashboard",
     },
