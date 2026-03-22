@@ -47,8 +47,9 @@ RULES = [
         "name": "Stripe Secret Key",
         "category": "Payment",
         "severity": "critical",
-        "pattern": r"sk_live_[0-9a-zA-Z]{24,}",
-        "description": "Stripe Live Secret Key — can process payments",
+        # Updated: now detects both sk_live_ and sk_test_ keys
+        "pattern": r"sk_(?:live|test)_[0-9a-zA-Z]{24,}",
+        "description": "Stripe Live/Test Secret Key — can process payments",
         "remediation": "Rotate immediately at dashboard.stripe.com/apikeys",
     },
     {
@@ -56,7 +57,7 @@ RULES = [
         "name": "Stripe Restricted Key",
         "category": "Payment",
         "severity": "critical",
-        "pattern": r"sk_(?:live|test)_[0-9a-zA-Z]{24,}",
+        "pattern": r"rk_live_[0-9a-zA-Z]{24,}",
         "description": "Stripe Live Restricted Key",
         "remediation": "Rotate immediately at Stripe Dashboard",
     },
